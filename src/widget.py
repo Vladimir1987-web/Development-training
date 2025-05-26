@@ -1,9 +1,9 @@
-import datetime
+from typing import Union
 
 from masks import get_mask_account, get_mask_card_number
 
 
-def mask_account_card(card_or_account_number: str) -> str:
+def mask_account_card(card_or_account_number: Union[str]) -> str:
     """
     Обрабатывает информацию как о картах, так и о счетах
     :param card_or_account_number:
@@ -19,13 +19,13 @@ def mask_account_card(card_or_account_number: str) -> str:
 
     if 'счет' in name.lower():
         str_mask_account = get_mask_account(value_number)
-        return str_mask_account
+        return f'{str_mask_account}'
     else:
         str_mask_number = get_mask_card_number(value_number)
-        return str_mask_number
+        return f'{str_mask_number}'
 
 
-def get_date(info_date: str) -> str:
+def get_date(info_date: Union[str]) -> str:
     """
     Принимает на вход строку с датой в формате "2024-03-11T02:26:18.671407"
     и возвращает строку с датой в формате "ДД.ММ.ГГГГ" ("11.03.2024")
