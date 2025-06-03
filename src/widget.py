@@ -9,20 +9,20 @@ def mask_account_card(card_or_account_number: Union[str]) -> str:
     :param card_or_account_number:
     :return:
     """
-    name = ''
-    value_number = ''
+    name = ""
+    value_number = ""
     for i in card_or_account_number:
         if i.isalpha():
             name += i
         elif i.isdigit():
             value_number += i
 
-    if 'счет' in name.lower():
+    if "счет" in name.lower():
         str_mask_account = get_mask_account(value_number)
-        return f'{str_mask_account}'
+        return f"{str_mask_account}"
     else:
         str_mask_number = get_mask_card_number(value_number)
-        return f'{str_mask_number}'
+        return f"{str_mask_number}"
 
 
 def get_date(info_date: Union[str]) -> str:
@@ -32,9 +32,9 @@ def get_date(info_date: Union[str]) -> str:
     :param info_date:
     :return:
     """
-    return f'{info_date[8:10]}.{info_date[5:7]}.{info_date[0:4]}'
+    return f"{info_date[8:10]}.{info_date[5:7]}.{info_date[0:4]}"
 
 
-if __name__ in '__main__':
-    print(mask_account_card('Счет 64686473678894779589'))
-    print(get_date('2024-03-11T02:26:18.671407'))
+if __name__ in "__main__":
+    print(mask_account_card("Счет 64686473678894779589"))
+    print(get_date("2024-03-11T02:26:18.671407"))
