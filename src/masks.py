@@ -24,10 +24,11 @@ def get_mask_card_number(card_number: Union[str, int]) -> str:
 
 def get_mask_account(number_cart: Union[str, int]) -> str:
     """
-    Переводим числа в строку и убираем пробелы в номере счёта
+    Принимает на вход номер счета и возвращает его маску
     :param number_cart:
     :return:
     """
+    # Переводим числа в строку и убираем пробелы в номере счёта
     cart_str = str(number_cart)
     number_cart = cart_str.replace(" ", "")
     # Делаем маску номера счёта
