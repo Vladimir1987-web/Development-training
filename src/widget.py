@@ -1,11 +1,11 @@
-from typing import Union
-
 from datetime import datetime
+
+from typing import Union
 
 from src.masks import get_mask_account, get_mask_card_number
 
 
-def mask_account_card(card_or_account_number: Union[str]=None) -> str:
+def mask_account_card(card_or_account_number: Union[str]) -> str:
     """
     Обрабатывает информацию как о картах, так и о счетах
     :param card_or_account_number:
@@ -55,8 +55,7 @@ def get_date(info_date: Union[str]) -> str:
 
     return date_object_d_m_Y
 
-#f"{info_date[8:10]}.{info_date[5:7]}.{info_date[0:4]}"
 
 if __name__ in "__main__":
-    #print(mask_account_card('Счет 64686473678894779589'))
+    print(mask_account_card('Счет 64686473678894779589'))
     print(get_date("03/11/2024"))
