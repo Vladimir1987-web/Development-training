@@ -30,6 +30,7 @@ def test_typeerror_get_mask_card_number():
 def numb_cart():
     return 73654108430135874305
 
+
 def test_get_mask_account(numb_cart):
     get_mask_account(numb_cart) == '**4305'
 

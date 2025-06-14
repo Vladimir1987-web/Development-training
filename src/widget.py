@@ -1,14 +1,20 @@
 from typing import Union
 
+from datetime import datetime
+
 from src.masks import get_mask_account, get_mask_card_number
 
 
-def mask_account_card(card_or_account_number: Union[str]) -> str:
+def mask_account_card(card_or_account_number: Union[str]=None) -> str:
     """
     Обрабатывает информацию как о картах, так и о счетах
     :param card_or_account_number:
     :return:
     """
+
+    if card_or_account_number == '':
+        raise ValueError('Введите номер карты или счета!')
+
     name = ""
     value_number = ""
     for i in card_or_account_number:
@@ -32,9 +38,25 @@ def get_date(info_date: Union[str]) -> str:
     :param info_date:
     :return:
     """
-    return f"{info_date[8:10]}.{info_date[5:7]}.{info_date[0:4]}"
 
+    if info_date == '':
+        raise ValueError('Нет даты!')
+
+    if info_date[:4].isdigit():
+        if info_date[4] == '-':
+            date_object_d_m_Y = datetime.strptime(info_date[:10], "%Y-%m-%d").strftime("%d.%m.%Y")
+        elif info_date[4] == '/':
+            date_object_d_m_Y = datetime.strptime(info_date[:10], "%Y/%m/%d").strftime("%d.%m.%Y")
+    else:
+        if info_date[2] == '-':
+            date_object_d_m_Y = datetime.strptime(info_date[:10], "%d-%m-%Y").strftime("%d.%m.%Y")
+        elif info_date[2] == '/':
+            date_object_d_m_Y = datetime.strptime(info_date[:10], "%m/%d/%Y").strftime("%d.%m.%Y")
+
+    return date_object_d_m_Y
+
+#f"{info_date[8:10]}.{info_date[5:7]}.{info_date[0:4]}"
 
 if __name__ in "__main__":
-    print(mask_account_card("Счет 64686473678894779589"))
-    #print(get_date("2024-03-11T02:26:18.671407"))
+    #print(mask_account_card('Счет 64686473678894779589'))
+    print(get_date("03/11/2024"))
