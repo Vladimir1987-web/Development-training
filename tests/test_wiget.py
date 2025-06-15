@@ -1,3 +1,5 @@
+from typing import Union
+
 import pytest
 
 from src.widget import get_date, mask_account_card
@@ -13,16 +15,16 @@ from src.widget import get_date, mask_account_card
         ("Счет 35383033474447895560", "**5560"),
     ],
 )
-def test_mask_account_card(card_or_account_number, expected):
+def test_mask_account_card(card_or_account_number: Union[str], expected: Union[str]) -> None:
     assert mask_account_card(card_or_account_number) == expected
 
 
-def test_mask_account_card_invalid_number():
+def test_mask_account_card_invalid_number() -> None:
     with pytest.raises(ValueError):
         mask_account_card("")
 
 
-def test_get_date_empty():
+def test_get_date_empty() -> None:
     with pytest.raises(ValueError):
         get_date("")
 
@@ -36,5 +38,5 @@ def test_get_date_empty():
         ("11-03-2024", "11.03.2024"),
     ],
 )
-def test_get_date_format_date(info_date, expected):
+def test_get_date_format_date(info_date: str, expected: str) -> None:
     assert get_date(info_date) == expected
