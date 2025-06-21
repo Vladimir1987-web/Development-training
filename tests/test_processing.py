@@ -155,6 +155,6 @@ def test_sort_by_date_incorrect(data_for_date: list[str]) -> None:
     ],
 )
 def test_sort_by_date_non_standard(
-    data_for_non_standard: list[dict[str, Any]], expected: list[dict[str, Any]]
+        data_for_non_standard: list[dict[str, Any]], expected: list[dict[str, Any]]
 ) -> None:
     assert sort_by_date(data_for_non_standard) == expected

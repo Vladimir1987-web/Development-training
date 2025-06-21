@@ -8,7 +8,7 @@
 2. Установите зависимости:
 ```pip install -r requirements.txt```
 ## Использование:
-Данный проект состоит из трёх модулей:
+Данный проект состоит из четырёх модулей:
 1. Модуль mask.py - в нём две функции:
 - get_mask_card_number - Принимает на вход номер 
 карты и возвращает ее маску
@@ -58,10 +58,42 @@ print(
         )
     )
 ```
+4. Модуль generators.py, состоящий из трёх функций:
+- filter_by_currency - Фильтрует транзакции по заданному коду валюты и возвращает итератор.
+- transaction_descriptions - Принимает список словарей с транзакциями и возвращает описание каждой операции по очереди.
+- card_number_generator - Генерирует номера карт в заданном диапазоне.
+Пример использования:
+```commandline
+if __name__ == "__main__":
 
+    usd_transactions = filter_by_currency(transaction, "USD")
+    try:
+        for _ in range(5):
+            print(next(usd_transactions))
+    except StopIteration:
+        print("Нет транзакций в указанной валюте.")
+
+    descriptions = transaction_descriptions(transaction)
+    try:
+        for _ in range(6):
+            print(next(descriptions))
+    except StopIteration:
+        print("Нет транзакций больше.")
+
+    try:
+        numb_cart_generator = card_number_generator(9999999999999998, 999999999999999999)
+        print(next(numb_cart_generator))
+        print(next(numb_cart_generator))
+        print(next(numb_cart_generator))
+        print(next(numb_cart_generator))
+    except StopIteration:
+        print("Диапазон исчерпан.")
+
+```
 
 ### Тестирование
-В пакете tests реализованы три модуля для тестирования функций каждого модуля из пакета src:
+В пакете tests реализованы четыре модуля для тестирования функций каждого модуля из пакета src:
 1) Модуль test_masks.py
 2) Модуль test_wiget.py
 3) Модуль test_procesing.py
+4) Модуль test_generators.py
