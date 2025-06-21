@@ -12,10 +12,10 @@ def get_mask_card_number(card_number: Union[str, int]) -> str:
     number_card = str_card_number.replace(" ", "")
 
     if len(number_card) != 16:
-        raise ValueError('Неверная длина номера карты!')
+        raise ValueError("Неверная длина номера карты!")
 
     if not number_card.isdigit():
-        raise ValueError('Недопустимые символы в номере карты!')
+        raise ValueError("Недопустимые символы в номере карты!")
 
     # Вставляем пробелы после каждой четвёртой цифры
     mask_cart = " ".join(number_card[i : i + 4] for i in range(0, len(number_card), 4))
@@ -46,10 +46,10 @@ def get_mask_account(number_cart: Union[str, int]) -> str:
     number_cart = cart_str.replace(" ", "")
 
     if not number_cart.isdigit():
-        raise ValueError('Недопустимые символы в номере карты!')
+        raise ValueError("Недопустимые символы в номере карты!")
 
     if len(number_cart) != 20:
-        raise ValueError('Неверная длина номера карты!')
+        raise ValueError("Неверная длина номера карты!")
 
     # Делаем маску номера счёта
     number_mask = str(number_cart[-4:])
@@ -57,5 +57,5 @@ def get_mask_account(number_cart: Union[str, int]) -> str:
 
 
 if __name__ == "__main__":
-    print(get_mask_card_number('1234567812345678'))
+    print(get_mask_card_number("1234567812345678"))
     print(get_mask_account(73654108430135874305))

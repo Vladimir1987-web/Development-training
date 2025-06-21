@@ -11,8 +11,8 @@ def mask_account_card(card_or_account_number: Union[str]) -> str:
     :return:
     """
 
-    if card_or_account_number == '':
-        raise ValueError('Введите номер карты или счета!')
+    if card_or_account_number == "":
+        raise ValueError("Введите номер карты или счета!")
 
     name = ""
     value_number = ""
@@ -38,23 +38,23 @@ def get_date(info_date: Union[str]) -> str:
     :return:
     """
 
-    if info_date == '':
-        raise ValueError('Нет даты!')
+    if info_date == "":
+        raise ValueError("Нет даты!")
 
     if info_date[:4].isdigit():
-        if info_date[4] == '-':
+        if info_date[4] == "-":
             date_object_d_m_Y = datetime.strptime(info_date[:10], "%Y-%m-%d").strftime("%d.%m.%Y")
-        elif info_date[4] == '/':
+        elif info_date[4] == "/":
             date_object_d_m_Y = datetime.strptime(info_date[:10], "%Y/%m/%d").strftime("%d.%m.%Y")
     else:
-        if info_date[2] == '-':
+        if info_date[2] == "-":
             date_object_d_m_Y = datetime.strptime(info_date[:10], "%d-%m-%Y").strftime("%d.%m.%Y")
-        elif info_date[2] == '/':
+        elif info_date[2] == "/":
             date_object_d_m_Y = datetime.strptime(info_date[:10], "%m/%d/%Y").strftime("%d.%m.%Y")
 
     return date_object_d_m_Y
 
 
 if __name__ in "__main__":
-    print(mask_account_card('Счет 64686473678894779589'))
+    print(mask_account_card("Счет 64686473678894779589"))
     print(get_date("03/11/2024"))
