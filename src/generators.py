@@ -1,7 +1,5 @@
 from typing import Generator
 
-from tests.test_masks import numb_cart
-
 transaction = [
     {
         "id": 939719570,
