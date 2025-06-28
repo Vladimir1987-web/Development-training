@@ -1,0 +1,21 @@
+Функция my_function успешно завершена. Результат: 3
+Ошибка в my_function :TypeError, args :(1, '2'), kwargs{}
+Функция my_function успешно завершена. Результат: 223
+Функция my_function успешно завершена. Результат: 223
+Функция my_function успешно завершена. Результат: 223
+Функция my_function успешно завершена. Результат: 223
+26/06/2025, 21:40:14
+Функция my_function успешно завершена. Результат: 223
+Время окончания работы функции: 26/06/2025, 21:41:59
+Функция my_function успешно завершена. Результат: 223
+Время окончания работы функции: 27/06/2025, 18:32:19
+Функция my_function успешно завершена. Результат: 223
+Время окончания работы функции: 27/06/2025, 18:38:32
+Время выполнения декоратора составило:0.000006 секунд.
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
