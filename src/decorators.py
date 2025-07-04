@@ -1,6 +1,7 @@
 import time
 import timeit
 
+
 def log(filename=None):
     """
     Декоратор log автоматически логирует начало и конец выполнения функции,
