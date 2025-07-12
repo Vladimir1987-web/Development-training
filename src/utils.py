@@ -5,26 +5,23 @@ from typing import Dict
 import requests
 from dotenv import load_dotenv
 
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
+BASE_URL = "https://api.apilayer.com/exchangerates_data/latest"
+
 
 def funk_data_transactions(way: str) -> list[dict]:
     """Принимает на вход путь до JSON-файла и возвращает список словарей с данными о финансовых транзакциях"""
     try:
         with open(way, encoding='utf-8') as f:
             try:
-                data = json.load(f)
+                data = json.loads(f.read())
             except json.JSONDecodeError:
-                return []
-            if type(data) is not list:
                 return []
         return data
     except FileNotFoundError:
         return []
-
-
-load_dotenv()
-
-API_KEY = os.getenv("API_KEY")
-BASE_URL = "https://api.apilayer.com/exchangerates_data/latest"
 
 
 def convert_to_rub(transaction: Dict) -> float:
