@@ -1,14 +1,14 @@
 import time
 import timeit
 
-"""
-Декоратор log автоматически логирует начало и конец выполнения функции,
-а также ее результаты или возникшие ошибки
-"""
-
 
 def log(filename=None):
+    """
+    Декоратор log автоматически логирует начало и конец выполнения функции,
+    а также ее результаты или возникшие ошибки
+    """
     def my_decorator(function):
+
         def wrapper(*args, **kwargs):
             named_tuple = time.localtime()  # получить struct_time
             time_string = time.strftime("%d/%m/%Y, %H:%M:%S", named_tuple)

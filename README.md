@@ -8,7 +8,7 @@
 2. Установите зависимости:
 ```pip install -r requirements.txt```
 ## Использование:
-Данный проект состоит из пяти модулей:
+Данный проект состоит из шести модулей:
 1. Модуль mask.py - в нём две функции:
 - get_mask_card_number - Принимает на вход номер 
 карты и возвращает ее маску
@@ -96,10 +96,40 @@ if __name__ == "__main__":
 if __name__ == "__main__":
     my_function(1, "2")
 ```
+6. Модуль utils.py, состоящий из двух функций:
+- funk_data_transactions - Принимает на вход путь до JSON-файла и возвращает список словарей с данными
+о финансовых транзакциях.
+- convert_to_rub - Конвертирует сумму транзакции из исходной валюты в рубли по текущему курсу и возвращает сумму транзакции (ключ
+amount) в рублях, тип данных float.
+Пример использования:
+```commandline
+if __name__ == '__main__':
+    print(funk_data_transactions(r'C:\Training\Python-development\Project\pythonProjectBank\data\operations.json'))
+    print(convert_to_rub(
+        {
+            "id": 242885401,
+            "state": "EXECUTED",
+            "date": "2019-07-08T00:08:32.986663",
+            "operationAmount": {
+                "amount": "10083.68",
+                "currency": {
+                    "name": "USD",
+                    "code": "USD"
+                }
+            },
+            "description": "Перевод со счета на счет",
+            "from": "Счет 38427597486442637521",
+            "to": "Счет 83889757415570699323"
+        }
+    )
+    )
+```
+
 ### Тестирование
-В пакете tests реализованы пять модулей для тестирования функций каждого модуля из пакета src:
+В пакете tests реализованы шесть модулей для тестирования функций каждого модуля из пакета src:
 1) Модуль test_masks.py
 2) Модуль test_wiget.py
 3) Модуль test_procesing.py
 4) Модуль test_generators.py
 5) Модуль test_decorators.py
+6) Модуль test_utils.py
