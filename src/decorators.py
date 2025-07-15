@@ -7,6 +7,7 @@ def log(filename=None):
     Декоратор log автоматически логирует начало и конец выполнения функции,
     а также ее результаты или возникшие ошибки
     """
+
     def my_decorator(function):
 
         def wrapper(*args, **kwargs):
