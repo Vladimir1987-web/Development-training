@@ -8,3 +8,25 @@ my_function ok. Результат: 3
 my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
 my_function ok. Результат: 3
 my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
+my_function ok. Результат: 3
+my_function error:TypeError. Inputs: args :(1, '2'), kwargs{}
