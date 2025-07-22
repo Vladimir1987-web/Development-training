@@ -8,7 +8,7 @@ def reading_cvs(way_cvs: str) -> list:
     :return:
     """
     try:
-        df_csv = pd.read_csv(way_cvs, sep=';')
+        df_csv = pd.read_csv(way_cvs, sep=";")
         transactions_csv_list = df_csv.to_dict(orient="records")
         return transactions_csv_list
     except FileNotFoundError:
@@ -37,6 +37,6 @@ def reading_excel(way_excel: str) -> list:
         return []
 
 
-if __name__ == '__main__':
-    print(reading_cvs('transactions.csv'))
-    print(reading_excel('transactions_excel.xlsx'))
+if __name__ == "__main__":
+    print(reading_cvs("transactions.csv"))
+    print(reading_excel("transactions_excel.xlsx"))
