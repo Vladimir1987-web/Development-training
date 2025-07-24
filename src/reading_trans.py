@@ -4,6 +4,7 @@ import pandas as pd
 def reading_cvs(way_cvs: str) -> list:
     """
     Считывает финансовые операции из CSV и возвращает список словарей с транзакциями.
+    :param way_cvs:
     :param way:
     :return:
     """
@@ -22,6 +23,7 @@ def reading_cvs(way_cvs: str) -> list:
 def reading_excel(way_excel: str) -> list:
     """
     Считывает финансовые операции из Excel и возвращает список словарей с транзакциями.
+    :param way_excel:
     :param way:
     :return:
     """
@@ -38,5 +40,5 @@ def reading_excel(way_excel: str) -> list:
 
 
 if __name__ == "__main__":
-    print(reading_cvs("transactions.csv"))
-    print(reading_excel("transactions_excel.xlsx"))
+    print(reading_cvs(r"C:\Training\Python-development\Project\pythonProjectBank\src\transactions.csv"))
+    print(reading_excel(r"C:\Training\Python-development\Project\pythonProjectBank\src\transactions_excel.xlsx"))

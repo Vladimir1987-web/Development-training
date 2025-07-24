@@ -24,10 +24,10 @@ def mask_account_card(card_or_account_number: Union[str]) -> str:
 
     if "счет" in name.lower():
         str_mask_account = get_mask_account(value_number)
-        return f"{str_mask_account}"
+        return f"{name} {str_mask_account}"
     else:
         str_mask_number = get_mask_card_number(value_number)
-        return f"{str_mask_number}"
+        return f"{name} {str_mask_number}"
 
 
 def get_date(info_date: Union[str]) -> str:
