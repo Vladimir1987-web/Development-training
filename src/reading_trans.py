@@ -4,11 +4,12 @@ import pandas as pd
 def reading_cvs(way_cvs: str) -> list:
     """
     Считывает финансовые операции из CSV и возвращает список словарей с транзакциями.
+    :param way_cvs:
     :param way:
     :return:
     """
     try:
-        df_csv = pd.read_csv(way_cvs, sep=';')
+        df_csv = pd.read_csv(way_cvs, sep=";")
         transactions_csv_list = df_csv.to_dict(orient="records")
         return transactions_csv_list
     except FileNotFoundError:
@@ -22,6 +23,7 @@ def reading_cvs(way_cvs: str) -> list:
 def reading_excel(way_excel: str) -> list:
     """
     Считывает финансовые операции из Excel и возвращает список словарей с транзакциями.
+    :param way_excel:
     :param way:
     :return:
     """
@@ -37,6 +39,6 @@ def reading_excel(way_excel: str) -> list:
         return []
 
 
-if __name__ == '__main__':
-    print(reading_cvs('transactions.csv'))
-    print(reading_excel('transactions_excel.xlsx'))
+if __name__ == "__main__":
+    print(reading_cvs(r"C:\Training\Python-development\Project\pythonProjectBank\src\transactions.csv"))
+    print(reading_excel(r"C:\Training\Python-development\Project\pythonProjectBank\src\transactions_excel.xlsx"))
