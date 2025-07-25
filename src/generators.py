@@ -69,5 +69,5 @@ def card_number_generator(start: int, stop: int) -> Generator[str, None, None]:
         yield number_card
 
 
-if __name__ == '__main__':
-    next(filter_by_currency(transaction, 'RUB'))
+if __name__ == "__main__":
+    next(filter_by_currency(transaction, "RUB"))
